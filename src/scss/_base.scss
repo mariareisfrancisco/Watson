@@ -89,17 +89,67 @@ a {
 
 .login {
   height: 35px;
+  scale: 1.1;
 }
 
 nav img {
   height: 20px;
 }
 
+.language {
+  font-family: "open-sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
+}
+
+.language span {
+  color: #f40f97;
+}
+
+.small-nav {
+  background-color: #222222;
+  height: 50px;
+  display: flex;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-top: #fff solid 1px;
+}
+
+.cat {
+  padding: 0 5px;
+  color: #7bd400;
+  font-family: "open-sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+}
+
+.login-phrase {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: "open-sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  height: 100%;
+}
+
+.login-phrase img {
+  width: 50px;
+  padding: 10px 0 0;
+  margin-left: 10px;
+}
+
 .horizontal-line {
   background-color: #dddddd;
   width: 100%;
   height: 2px;
-  margin: 22px 0;
+  margin: 0 0 22px 0;
 }
 
 .section-title {
@@ -132,11 +182,14 @@ article {
   position: relative;
   z-index: auto;
   margin-bottom: 20px;
+  height: 100%;
 }
 
 .big-article {
-  height: 100%;
+  z-index: auto;
   padding-bottom: 20px;
+  position: relative;
+  height: 100%; /* Adjust as needed */
 }
 
 .corner {
@@ -162,7 +215,7 @@ article {
   position: absolute;
   bottom: 20px;
   left: 0;
-  max-width: 100%;
+  width: 100%;
   border-bottom-left-radius: 15;
   border-bottom-right-radius: 15;
 }
@@ -177,6 +230,7 @@ article {
   position: absolute;
   top: 15px;
   right: 10px;
+  height: 50px;
 }
 
 .icon-comment,
@@ -206,6 +260,7 @@ article {
   left: 0;
   padding: 20px 15px 40px;
   color: #ffffff;
+  width: 100%;
 }
 
 .article-type {
@@ -228,6 +283,35 @@ article {
   font-weight: 400;
   font-style: normal;
   font-size: 10px;
+  text-align: right;
+  width: 100%;
+  color: #888888;
+  font-size: 10px;
+}
+
+.big-article .date {
+  color: #fff;
+}
+
+.writer {
+  font-family: "open-sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  color: #888888;
+  padding-left: 5px;
+}
+
+.big-article .writer {
+  color: #d0d0d0;
+}
+
+.chapeau {
+  font-family: "open-sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  // width: 50%;
   text-align: right;
 }
 
@@ -358,6 +442,15 @@ article {
   text-transform: uppercase;
   color: #000000;
   text-align: center;
+  margin: 0 0 20px;
+  border-bottom: #d9d9d9 solid 5px;
+  display: inline-block;
+}
+
+.button-align {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .swiss-news {
@@ -403,6 +496,9 @@ article {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
 }
 
 .video-article {
@@ -447,8 +543,11 @@ article {
   }
 
   .gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     height: 50px;
-    width: 200px;
+    width: 100%;
     border-radius: 0;
   }
 
@@ -530,5 +629,97 @@ article {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+}
+// petit à moyen
+@media (min-width: 768px) {
+  .button-align {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+  }
+
+  .interaction {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .date {
+    text-align: left;
+  }
+}
+
+// moyen à grand
+@media (min-width: 1200px) {
+  .interaction {
+    scale: 0.8;
+  }
+
+  .login {
+    display: none;
+  }
+
+  .logo {
+    scale: 1.2;
+  }
+
+  .long-nav {
+    position: relative;
+  }
+
+  .language {
+    position: absolute;
+    top: 35%;
+    right: 120px;
+  }
+
+  .article-title {
+    font-size: 80px;
+    line-height: 80px;
+    margin-bottom: 15px;
+  }
+}
+
+// grand à moyen
+@media (max-width: 1200px) {
+  .small-nav,
+  .login-phrase {
+    display: none;
+  }
+
+  .horizontal-line {
+    margin-top: 22px;
+  }
+
+  .language {
+    display: none;
+  }
+
+  .gone {
+    display: none;
+  }
+
+  .regular-article.writer {
+    display: none;
+  }
+
+  .regular-article .date {
+    display: none;
+  }
+}
+
+// moyen à petit
+@media (max-width: 768px) {
+  .chapeau {
+    display: none;
+  }
+
+  .big-article {
+    height: 80vh;
+  }
+
+  article .writer {
+    display: none;
   }
 }
